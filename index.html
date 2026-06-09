@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>台灣土地估值工具</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="calculator-card" aria-labelledby="app-title">
+      <div class="card-header">
+        <p class="eyebrow">Land Value Calculator</p>
+        <h1 id="app-title">台灣土地估值工具</h1>
+      </div>
+
+      <div class="form-grid">
+        <label class="field">
+          <span>地區</span>
+          <select id="region">
+            <option value="台北市">台北市</option>
+            <option value="新北市">新北市</option>
+            <option value="台中市">台中市</option>
+            <option value="高雄市">高雄市</option>
+            <option value="其他縣市">其他縣市</option>
+          </select>
+        </label>
+
+        <label class="field">
+          <span>土地面積</span>
+          <input id="area" type="number" min="0" step="0.01" value="30" inputmode="decimal">
+        </label>
+
+        <label class="field">
+          <span>面積單位</span>
+          <select id="unit">
+            <option value="ping">坪</option>
+            <option value="sqm">平方公尺</option>
+          </select>
+        </label>
+      </div>
+
+      <section class="results" aria-live="polite">
+        <div class="result-row">
+          <span>換算坪數</span>
+          <strong id="pingOutput">30 坪</strong>
+        </div>
+        <div class="result-row">
+          <span>單價</span>
+          <strong id="priceOutput">120 萬元/坪</strong>
+        </div>
+        <div class="total-box">
+          <span>總估值</span>
+          <strong id="totalOutput">3,600 萬元</strong>
+        </div>
+      </section>
+
+      <p class="note">估值依內建平均單價計算，價格資料可在 script.js 擴充。</p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
